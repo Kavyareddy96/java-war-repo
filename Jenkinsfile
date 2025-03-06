@@ -28,9 +28,9 @@ pipeline {
     steps { 
         script { 
              
-            sh "aws ecr get-login-password --region ${AWS_REGION} | sudo docker login -username AWS --password-stdin ${ECR_REPO}" 
-            sh "sudo docker tag cm-repo:latest ${ECR_REPO}:latest" 
-            sh "sudo docker push ${ECR_REPO}:latest" 
+            sh "aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 715841331269.dkr.ecr.us-east-1.amazonaws.com" 
+            sh "sudo docker tag cm-repo:latest 715841331269.dkr.ecr.us-east-1.amazonaws.com/cm-repo:latest" 
+            sh "sudo docker push 715841331269.dkr.ecr.us-east-1.amazonaws.com/cm-repo:latest" 
         } 
     } 
 } 
